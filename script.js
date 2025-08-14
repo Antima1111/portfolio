@@ -1,0 +1,10 @@
+var typed= new typed(".text"),
+string: ["Frontend Developer",
+    "Web Developer",
+      "Tech Enthusiast",
+      "Creative Coder",
+      typeSpeed: 100,
+      backspeed: 100,
+      backDelay: 1000,
+      loop: true
+      ],

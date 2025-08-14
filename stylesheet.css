@@ -1,0 +1,881 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    color: #ededed;
+    background-color: #081b29;
+}
+
+/* Header & Navigation */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 20px 105px;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.logo {
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: default;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+}
+
+.navbar a {
+    display: inline-block;
+    font-size: 25px;
+    color: #fff;
+    text-decoration: none;
+    font-weight: 500;
+    margin-left: 35px;
+    transition: .3s;
+    opacity: 0;
+    animation: slideTop 0.5s ease forwards; 
+    animation-delay: calc(.2s * var(--i));
+}
+
+.navbar a:hover {
+    color: #0ef;
+}
+
+/* Home Section */
+.home {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    background: url('Purple Illustrated Mountain Dekstop Wallpaper.png') no-repeat;
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 70px 10%;
+    gap: 30px;
+}
+
+.home-content {
+    flex: 1;
+    max-width: 55%;
+}
+
+.home-content h3 {
+    font-size: 32px;
+    font-weight: 700;
+    opacity: 0;
+    animation: slideBottom 1s ease forwards;
+    animation-delay: 0.7s;
+}
+
+.home-content h3:nth-of-type(2) {
+    margin-bottom: 30px;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 0.9s;
+}
+
+.home-content h3 span {
+    color: #0ef;
+}
+
+.home-content h1 {
+    font-size: 56px;
+    font-weight: 700;
+    margin: -3px 0 20px;
+    opacity: 0;
+    animation: slideRight 1s ease forwards;
+    animation-delay: 1s;
+}
+
+.home-content p {
+    font-size: 20px;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: 1.2s;
+}
+
+.home-sci a {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    border: 2px solid #0ef;
+    border-radius: 50%;
+    font-size: 20px;
+    color: #0ef;
+    text-decoration: none;
+    transition: .5s ease;
+    opacity: 0;
+    animation: slideLeft 1s ease forwards;
+    animation-delay: calc(.2s * var(--i));
+    margin: 30px 15px 30px 0;
+}
+
+.home-sci a:hover {
+    background: #0ef;
+    color: #081b29;
+    box-shadow: 0 0 20px #0ef;
+}
+
+.btn-box {
+    display: inline-block;
+    padding: 12px 28px;
+    background: #0ef;
+    border-radius: 40px;
+    font-size: 16px;
+    color: #081b29;
+    letter-spacing: 1px;
+    text-decoration: none;
+    font-weight: 600;
+    opacity: 0;
+    animation: slideTop 1s ease forwards;
+    animation-delay: 2s;
+    box-shadow: 0 0 5px #0ef,
+                0 0 25px #0ef;
+}
+
+.btn-box:hover {
+    box-shadow: 0 0 5px cyan,
+                0 0 25px cyan,
+                0 0 50px cyan,
+                0 0 100px cyan,
+                0 0 200px cyan;
+}
+
+.home-photo {
+    flex: 0 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.home-photo img {
+    width: 350px;
+    height: 350px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow:
+        0 0 25px #0ef,
+        0 0 50px #0ef,
+        0 0 75px #ff00ff,
+        0 0 100px #ff00ff,
+        0 0 120px #0ef,
+        0 0 150px #ff00ff;
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+/* Animations */
+@keyframes slideRight {
+    0% {
+        transform: translateX(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideLeft {
+    0% {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideTop {
+    0% {
+        transform: translateY(100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+@keyframes slideBottom {
+    0% {
+        transform: translateY(-100px);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 1;
+    }
+}
+
+/* Neon pulse effect */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 25px #0ef,
+      0 0 50px #0ef,
+      0 0 75px #ff00ff,
+      0 0 100px #ff00ff,
+      0 0 120px #0ef,
+      0 0 150px #ff00ff;
+  }
+  50% {
+    box-shadow:
+      0 0 15px #0ef,
+      0 0 30px #0ef,
+      0 0 45px #ff00ff,
+      0 0 60px #ff00ff,
+      0 0 80px #0ef,
+      0 0 100px #ff00ff;
+  }
+}
+
+/* ---------- About Section ---------- */
+
+.about-section {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center; /* Center content for better symmetry */
+    align-items: center;
+    padding: 70px 10%;
+    gap: 60px;
+    background: linear-gradient(135deg, #0b1e30 0%, #111f32 100%);
+    border-radius: 20px;
+    box-shadow:
+        0 0 25px #0ef7,
+        0 0 50px #0ef7 inset;
+    color: #ddd;
+    animation: fadeInUp 1.5s ease forwards;
+}
+
+/* Image Container */
+.about-img {
+    flex: 0 0 320px;
+    display: flex;
+    justify-content: center;
+    border-radius: 50%;
+    padding: 10px;
+    background: radial-gradient(circle at center, #0ef 20%, transparent 70%);
+    box-shadow:
+        0 0 20px #0ef,
+        0 0 40px #ff00ff,
+        0 0 60px #0ef,
+        0 0 80px #ff00ff inset;
+    transition: transform 0.6s ease;
+}
+
+.about-img:hover {
+    transform: scale(1.05) rotate(3deg);
+}
+
+/* Image Styling */
+.photo-glow img {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow:
+        0 0 25px #0ef,
+        0 0 50px #0ef,
+        0 0 75px #ff00ff,
+        0 0 100px #ff00ff;
+    animation: neonPulse 3s ease-in-out infinite;
+}
+
+/* Text Container */
+.about-text {
+    flex: 1;
+    max-width: 600px;
+    text-align: left;
+    font-weight: 400;
+}
+
+/* Heading */
+.about-text h2 {
+    font-size: 3rem;
+    margin-bottom: 25px;
+    font-weight: 800;
+    color: #0ef;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    animation: slideRight 1s ease forwards;
+}
+
+/* Highlight in heading */
+.about-text h2 span {
+    color: #ff00ff;
+    text-shadow:
+        0 0 8px #ff00ff,
+        0 0 20px #ff00ff;
+}
+
+/* Paragraph */
+.about-text p {
+    font-size: 1.2rem;
+    line-height: 1.8;
+    color: #bbb;
+    margin-bottom: 20px;
+    animation: fadeIn 2s ease forwards;
+}
+
+/* Fancy underline for paragraph */
+.about-text p::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, #0ef, #ff00ff);
+    margin-top: 10px;
+    border-radius: 3px;
+    box-shadow: 0 0 8px #0ef, 0 0 12px #ff00ff;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+    .about-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 50px 5%;
+        gap: 40px;
+    }
+
+    .about-img {
+        margin-bottom: 25px;
+        padding: 0;
+        box-shadow: none;
+        background: transparent;
+        transform: none !important;
+    }
+
+    .about-text {
+        max-width: 100%;
+    }
+
+    .about-text h2 {
+        font-size: 2.5rem;
+    }
+
+    .about-text p {
+        font-size: 1.1rem;
+    }
+}
+
+/* Animations */
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes slideRight {
+    0% {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+
+.project-icon {
+  display: block;
+  margin: 0 auto 15px auto;
+  width: 48px;
+  height: 48px;
+  filter: drop-shadow(0 0 6px #0ef);
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.project-btn.live-btn {
+  margin-left: 10px;
+  background: #ff00ff;
+  color: #081b29;
+  box-shadow: 0 0 10px #ff00ff;
+}
+
+.project-btn.live-btn:hover {
+  background: #fe66fe;
+  box-shadow: 0 0 15px #ff00ff, 0 0 30px #ff00ff;
+  color: #000;
+}
+
+/* Neon pulse effect for image (same as your existing but a bit slower) */
+@keyframes neonPulse {
+  0%, 100% {
+    box-shadow:
+      0 0 30px #0ef,
+      0 0 60px #0ef,
+      0 0 90px #ff00ff,
+      0 0 120px #ff00ff,
+      0 0 140px #0ef,
+      0 0 180px #ff00ff;
+  }
+  50% {
+    box-shadow:
+      0 0 20px #0ef,
+      0 0 40px #0ef,
+      0 0 60px #ff00ff,
+      0 0 80px #ff00ff,
+      0 0 100px #0ef,
+      0 0 120px #ff00ff;
+  }
+}
+
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 20px #0ef, 0 0 30px #0ef;
+}
+
+.projects-section {
+    padding: 60px 10%;
+    background-color: #0b1e30;
+    color: #ededed;
+    box-shadow:
+        0 0 25px #0ef7,
+        0 0 50px #0ef7 inset;
+    color: #ddd;
+}
+
+.section-title {
+    font-size: 2.5rem;
+    text-align: center;
+    margin-bottom: 50px;
+    font-weight: 700;
+    animation: slideBottom 1s ease forwards;
+}
+
+.section-title span {
+    color: #0ef;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+.project-card {
+    background: linear-gradient(145deg, #0c2238, #0a1a2b);
+    padding: 25px;
+    border-radius: 20px;
+    box-shadow: 0 0 20px #0ef3;
+    transition: transform 0.4s, box-shadow 0.4s;
+    animation: slideLeft 1s ease forwards;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 0 25px #0ef, 0 0 40px #ff00ff;
+}
+
+.project-card h2 {
+    font-size: 1.5rem;
+    color: #0ef;
+    margin-bottom: 15px;
+}
+
+.project-card p {
+    font-size: 1rem;
+    color: #ccc;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.project-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background: #0ef;
+    color: #081b29;
+    font-weight: 600;
+    border-radius: 30px;
+    text-decoration: none;
+    box-shadow: 0 0 10px #0ef;
+    transition: 0.4s;
+}
+
+.project-btn:hover {
+    box-shadow: 0 0 10px cyan,
+                0 0 20px cyan,
+                0 0 40px cyan;
+    background-color: #00ffff;
+    color: #000;
+}
+
+.education-section {
+  padding: 60px 5%;
+  background: linear-gradient(145deg, #081b29, #0c1e2e);
+  
+  color: #ededed;
+  text-align: center;
+}
+
+.edu-subtitle {
+  font-size: 1.1rem;
+  margin-bottom: 40px;
+  color: #aaa;
+  animation: fadeIn 2s ease forwards;
+}
+
+.edu-cards-container {
+  display: flex;
+  justify-content: center; /* Center cards */
+  gap: 20px;
+  flex-wrap: wrap; /* Allow wrapping on smaller screens */
+  margin-bottom: 30px;
+}
+
+/* Flip Card Container */
+.edu-flip-card {
+  width: 32%;
+  height: 300px;
+  perspective: 1000px;
+  cursor: pointer;
+  border-radius: 20px;
+  box-shadow:
+    0 0 20px #0ef,
+    0 0 40px #ff00ff,
+    0 0 60px #0ef,
+    0 0 80px #ff00ff inset;
+  transition: transform 0.6s ease;
+  transform-style: preserve-3d; /* IMPORTANT for 3D flip */
+}
+
+.edu-flip-card:hover {
+  transform: scale(1.05); /* Only scale, remove rotation here */
+}
+
+/* Inner flip wrapper */
+.edu-flip-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.9s;
+  transform-style: preserve-3d;
+}
+
+/* Flip on hover */
+.edu-flip-card:hover .edu-flip-inner {
+  transform: rotateY(180deg);
+}
+
+/* Front and Back sides */
+.edu-front, .edu-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  border-radius: 20px;
+  backface-visibility: hidden;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 0 15px #0ef3, 0 0 30px #ff00ff3a;
+  color: #ddd;
+  transition: background 0.3s ease;
+}
+
+/* Front face */
+.edu-front {
+  background: linear-gradient(135deg, #0a1a2b, #0c2238);
+  border: 2px solid #0ef;
+  color: #0ef;
+}
+
+.edu-front h2 {
+  font-size: 2.2rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px #0ef;
+}
+
+.edu-front p {
+  font-size: 1.1rem;
+  color: #ccc;
+  text-align: center;
+}
+
+/* Back face */
+.edu-back {
+  background: linear-gradient(135deg, #0c2238, #0a1a2b);
+  border: 2px solid #ff00ff;
+  box-shadow: 0 0 25px #ff00ff88;
+  transform: rotateY(180deg);
+  color: #fff;
+}
+
+.edu-back h3 {
+  font-size: 1.6rem;
+  color: #ff00ff;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px #ff00ff;
+}
+
+.edu-back p {
+  font-size: 1rem;
+  color: #ccc;
+  line-height: 1.6;
+  text-align: center;
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .edu-cards-container {
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+  }
+  .edu-flip-card {
+    width: 90%;
+    height: auto;
+  }
+  .edu-front, .edu-back {
+    padding: 25px;
+  }
+}
+
+
+/* ===================== General Container ===================== */
+.skills-container {
+    display: flex;
+    justify-content: flex-start;       /* Left-aligned boxes */
+    align-items: flex-start;           /* Top-aligned */
+    gap: 40px;                         /* Space between boxes */
+    padding: 0 50px;                   /* Left & right padding */
+    flex-wrap: nowrap;      
+    margin-bottom: 30px;            /* Keep boxes in single row */
+}
+
+
+
+
+/* ===================== Technical Skills Box ===================== */
+.skills-left {
+    flex: 0 0 auto;                     /* Take only required width */
+    min-width: 500px;                   /* Minimum width */
+    background: #0a1a2b;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 0 10px #0ef3;        /* Subtle glow */
+}
+
+/* Grid for Technical Orbs */
+.skill-orbs {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 orbs per row */
+    gap: 20px;                              /* Spacing between orbs */
+    justify-items: center;                   /* Center align orbs */
+}
+
+/* ===================== Technical Skill Orbs ===================== */
+.skill-orb {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, #0ef 35%, #081b29 100%);
+    box-shadow: 0 0 3px #0ef, 0 0 10px #ff00ff inset; /* subtle glow */
+    display: flex;
+    flex-direction: column; /* Icon on top, name below */
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    cursor: pointer;
+}
+
+.skill-orb i {
+    font-size: 2.2rem;
+}
+
+.skill-orb span {
+    margin-top: 6px;
+    font-weight: 600;
+}
+
+/* Hover effect for orbs */
+.skill-orb:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: 0 0 10px #0ef, 0 0 20px #ff00ff inset; /* subtle glow on hover */
+}
+
+/* ===================== Professional Skills Box ===================== */
+.skills-right {
+    flex: 0 0 450px;  
+     height: auto ;               
+    background: #0a1a2b;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 0 15px #0ef3;     /* subtle neon glow */
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+}
+
+/* Professional Skill Bars */
+.skill-bar {
+    margin-bottom: 25px;
+}
+
+.skill-bar last-child{
+    margin-bottom: 0;
+}
+.skill-bar p {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #fff;
+    font-size: 1.1rem;
+}
+
+.skill-bar p i {
+    color: #0ef;
+    font-size: 1.2rem;
+    transition: transform 0.4s ease, text-shadow 0.4s ease;
+}
+
+.skill-bar:hover p i {
+    transform: scale(1.3) rotate(10deg);
+    text-shadow: 0 0 5px #0ef, 0 0 10px #ff00ff; /* subtle glow on hover */
+}
+
+/* Skill progress bar container */
+.bar {
+    width: 100%;
+    background: #222;
+    border-radius: 25px;
+    height: 10px;
+    box-shadow: 0 0 5px #0ef; /* subtle glow */
+}
+
+/* Skill progress fill */
+.bar span {
+    display: block;
+    height: 100%;
+    width: 100%; /* fully filled */
+    background: linear-gradient(90deg, #0ef, #ff00ff);
+    border-radius: 25px;
+    box-shadow: 0 0 5px #0ef, 0 0 10px #ff00ff inset; /* subtle glow */
+    transition: 0.5s;
+}
+
+
+.professional-skills {
+    height: auto; /* fixed height remove karke auto kar do */
+    padding-bottom: 10px; /* gap kam karne ke liye */
+}
+
+.professional-skills .skill-bar:last-child {
+    margin-bottom: 0; /* last bar ke neeche ka gap remove */
+}
+
+
+/* ===================== Responsive ===================== */
+@media (max-width: 950px) {
+    .skills-container {
+        flex-direction: column;
+        padding: 0 0px;
+    }
+    .skills-left,
+    .skills-right {
+        min-width: 100%;
+        margin-bottom: 0px;
+    }
+    .skill-orbs {
+        grid-template-columns: repeat(2, 1fr); /* 2 orbs per row on smaller screens */
+    }
+}
+
+@media (max-width: 500px) {
+    .skill-orbs {
+        grid-template-columns: 1fr; /* 1 orb per row on mobile */
+    }
+    .skill-orb {
+        width: 90px;
+        height: 90px;
+    }
+    .skill-orb i {
+        font-size: 2rem;
+    }
+    .skill-orb span {
+        font-size: 0.85rem;
+    }
+}
+
+
+/* ==== Pulse animation for "tap me" hint ==== */
+@keyframes pulseGlow {
+    0% {
+        box-shadow: 0 0 5px #0ef, 0 0 10px #ff00ff inset;
+    }
+    50% {
+        box-shadow: 0 0 15px #0ef, 0 0 30px #ff00ff inset;
+    }
+    100% {
+        box-shadow: 0 0 5px #0ef, 0 0 10px #ff00ff inset;
+    }
+}
+
+/* Apply pulse effect to orbs */
+.skill-orb {
+    animation: pulseGlow 2s infinite;
+}
+
+/* Zoom-out + rotate effect when clicked */
+.skill-orb.clicked {
+    animation: zoomOut 0.4s forwards;
+}
+
+@keyframes zoomOut {
+    0% { transform: scale(1.15) rotate(5deg); }
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+
+
+
+
+
+
+
